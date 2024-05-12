@@ -26,8 +26,8 @@ app.get('/hta', (req, res) => {
   res.send(htaContent);
 });
 
-app.get('/8292', (req, res) => {
-  const imagePath = path.join(__dirname, 'src', '8292.png');
+app.get('/news', (req, res) => {
+  const imagePath = path.join(__dirname, 'src', 'news.png');
   res.sendFile(imagePath);
 });
 
