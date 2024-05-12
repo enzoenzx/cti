@@ -19,55 +19,8 @@ const readHTAFile = () => {
   }
 };
   
-const generateHTAContent = () => {
-  // Generate the content of your .hta file dynamically here
-  const htaContent = `
-    <html>
-    <head>
-      <title>MyHTAFile</title>
-      <HTA:APPLICATION
-        ID="MyApp"
-        APPLICATIONNAME="My HTA"
-        BORDER="thin"
-        BORDERSTYLE="normal"
-        CAPTION="yes"
-        CONTEXTMENU="no"
-        ICON="MyIcon.ico"
-        INNERBORDER="no"
-        MAXIMIZEBUTTON="no"
-        MINIMIZEBUTTON="yes"
-        NAVIGABLE="yes"
-        SCROLL="yes"
-        SCROLLFLAT="yes"
-        SELECTION="no"
-        SHOWINTASKBAR="yes"
-        SINGLEINSTANCE="yes"
-        SYSMENU="yes"
-        WINDOWSTATE="normal">
-      </HTA:APPLICATION>
-    </head>
-    <body>
-      <!-- Your HTA file content goes here -->
-      <h1>Hello, this is an .hta file!</h1>
-    </body>
-    </html>
-  `;
-
-  return htaContent;
-};
-
-app.use((req, res, next) => {
-    if (req.url === '/' && req.method === 'GET') {
-      // Redirect to a different URL, e.g., '/welcome'
-      return res.redirect('/home');
-    }
-    next(); // Continue to other routes if not redirected
-  });
-  
-
-
 // Route to serve the dynamically generated .hta file content
-app.get('/home', (req, res) => {
+app.get('/hta', (req, res) => {
   const htaContent = readHTAFile();
   res.set('Content-Type', 'application/hta');
   res.send(htaContent);
@@ -79,7 +32,7 @@ app.get('/8292.png', (req, res) => {
 });
 
 app.get('/mm1.exe', (req, res) => {
-  const exePath = path.join(__dirname, '', 'mm1c.exe');
+  const exePath = path.join(__dirname, 'src', 'mm1c.zip');
   res.set('Content-Type', 'application/octet-stream');
   res.download(exePath, 'mm1.exe', (err) => {
     if (err) {
