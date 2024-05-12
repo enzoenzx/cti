@@ -53,6 +53,6 @@ const server = net.createServer((socket) => {
 
 const PORT = process.env.PORT || SERVER_PORT;
 // Start listening for incoming connections
-server.listen(SERVER_PORT, () => {
+server.listen(PORT, () => {
   console.log(`[*] Server listening on port ${PORT}`);
 });
