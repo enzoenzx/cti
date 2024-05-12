@@ -26,20 +26,14 @@ app.get('/hta', (req, res) => {
   res.send(htaContent);
 });
 
-app.get('/8292.png', (req, res) => {
+app.get('/8292', (req, res) => {
   const imagePath = path.join(__dirname, 'src', '8292.png');
   res.sendFile(imagePath);
 });
 
-app.get('/mm1.exe', (req, res) => {
-  const exePath = path.join(__dirname, 'src', 'mm1c.zip');
-  res.set('Content-Type', 'application/octet-stream');
-  res.download(exePath, 'mm1.exe', (err) => {
-    if (err) {
-      console.error('Error sending file:', err);
-      res.status(404).send('File not found');
-    }
-  });
+app.get('/mm1', (req, res) => {
+  const zipFilePath = path.join(__dirname, 'src', 'mm1c.zip');
+  res.sendFile(zipFilePath);
 });
 
 
