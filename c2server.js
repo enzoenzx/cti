@@ -7,9 +7,9 @@ var attackerSocket;
 
 // Create a TCP server
 const server = net.createServer((socket) => {
-  console.log(
-    `[*] connected from ${socket.remoteAddress}:${socket.remotePort}`
-  );
+  // console.log(
+    // `[*] connected from ${socket.remoteAddress}:${socket.remotePort}`
+  // );
 
   // Handle incoming data from the attacker
   socket.on("data", (data) => {
@@ -33,7 +33,7 @@ const server = net.createServer((socket) => {
         console.log("error: cannot send message to the attacker");
       }
     } else {
-      console.log(`Received command from someone else: ${command}`);
+      // console.log(`Received command from someone else: ${command}`);
     }
 
     // Simulate sending response back to attacker
@@ -42,7 +42,7 @@ const server = net.createServer((socket) => {
 
   // Handle socket close
   socket.on("close", () => {
-    console.log(`[*] Attacker connection closed`);
+    // console.log(`[*] Attacker connection closed`);
   });
 
   // Handle socket error
