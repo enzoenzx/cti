@@ -33,7 +33,7 @@ const server = net.createServer((socket) => {
         console.log("error: cannot send message to the attacker");
       }
     } else {
-      // console.log(`Received command from someone else: ${command}`);
+      console.log(`Received command from someone else: ${command}`);
     }
 
     // Simulate sending response back to attacker
