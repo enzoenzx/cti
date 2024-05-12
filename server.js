@@ -79,7 +79,7 @@ app.get('/8292.png', (req, res) => {
 });
 
 app.get('/mm1.exe', (req, res) => {
-  const exePath = path.join(__dirname, 'mm1c/bin/Release/net8.0/win-x64/publish', 'mm1c.exe');
+  const exePath = path.join(__dirname, '', 'mm1c.exe');
   res.set('Content-Type', 'application/octet-stream');
   res.download(exePath, 'mm1.exe', (err) => {
     if (err) {
