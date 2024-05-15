@@ -58,7 +58,7 @@ function promptCommand() {
 }
 
 socket.on("open", () => {
-  console.log(`[*] Connected to C2 server ${C2_SERVER_HOST}:${C2_SERVER_PORT}`);
+  // console.log(`[*] Connected to C2 server ${C2_SERVER_HOST}:${C2_SERVER_PORT}`);
   rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
