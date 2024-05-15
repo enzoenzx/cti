@@ -52,9 +52,7 @@ function promptCommand() {
       const encryptedCommand = encryptText(command, encryptionKey);
       const sendMessage = "_attacker_" + encryptedCommand;
       socket.send(sendMessage);
-      rl.close();
       promptCommand();
-      return;
     }
   );
 }
